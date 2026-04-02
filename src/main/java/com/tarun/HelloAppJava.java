@@ -3,9 +3,19 @@ package com.tarun;
 public class HelloAppJava {
     public static void main(String[] args) {
 
-        // Ternary operator to handle default value
-        String name = (args.length > 0) ? args[0] : "World";
+        String message;
 
-        System.out.println("Hello, " + name + "!");
+        // Check if arguments are provided
+        if (args.length > 0) {
+            // Join all names with comma and space
+            String names = String.join(", ", args);
+            message = "Hello, " + names + "!";
+        } else {
+            // Default case
+            message = "Hello, World!";
+        }
+
+        // Print result
+        System.out.println(message);
     }
 }
