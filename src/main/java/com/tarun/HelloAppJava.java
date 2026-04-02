@@ -3,19 +3,22 @@ package com.tarun;
 public class HelloAppJava {
     public static void main(String[] args) {
 
-        String message;
-
-        // Check if arguments are provided
-        if (args.length > 0) {
-            // Join all names with comma and space
-            String names = String.join(", ", args);
-            message = "Hello, " + names + "!";
-        } else {
-            // Default case
-            message = "Hello, World!";
+        // Case 1: No arguments
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+            return;
         }
 
-        // Print result
-        System.out.println(message);
+        // Case 2: Arguments present
+        StringBuilder names = new StringBuilder();
+
+        for (String name : args) {
+            if (names.length() > 0) {
+                names.append(", ");
+            }
+            names.append(name);
+        }
+
+        System.out.println("Hello, " + names + "!");
     }
 }
